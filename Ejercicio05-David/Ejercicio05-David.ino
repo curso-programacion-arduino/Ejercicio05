@@ -1,14 +1,14 @@
 #include <Servo.h>
 
-#define PIN_SERVO 9
-#define PIN_BOTON_A 2
+#define PIN_SERVO 9 //servo
+#define PIN_BOTON_A 2 //boton rojo
 
 Servo miservo;
 
 int grados = 10;  //Variable global
-boolean anterior_a;
+
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); 
   pinMode(PIN_BOTON_A, INPUT_PULLUP);
   miservo.attach(PIN_SERVO);
   miservo.write(grados);
@@ -20,7 +20,7 @@ void loop() {
 }
 
 void detectaFlanco() {
-
+  static boolean anterior_a = digitalRead(PIN_BOTON_A); //Variable local
   boolean estado_a = digitalRead(PIN_BOTON_A);  //Variable local
 
   if (anterior_a != estado_a) {

@@ -6,7 +6,7 @@
 Servo miservo;
 
 int grados = 10;  //Variable global
-boolean anterior_a;
+
 void setup() {
   Serial.begin(9600);
   pinMode(PIN_BOTON_A, INPUT_PULLUP);
@@ -20,7 +20,7 @@ void loop() {
 }
 
 void detectaFlanco() {
-
+  static boolean anterior_a = digitalRead(PIN_BOTON_A); //Variable local
   boolean estado_a = digitalRead(PIN_BOTON_A);  //Variable local
 
   if (anterior_a != estado_a) {
