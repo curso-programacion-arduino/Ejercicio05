@@ -1,14 +1,14 @@
 #include <Servo.h>
 
-#define PIN_SERVO 9
-#define PIN_BOTON_A 2
+#define PIN_SERVO 9 //servo
+#define PIN_BOTON_A 2 //boton rojo
 
 Servo miservo;
 
 int grados = 10;  //Variable global
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); 
   pinMode(PIN_BOTON_A, INPUT_PULLUP);
   miservo.attach(PIN_SERVO);
   miservo.write(grados);
