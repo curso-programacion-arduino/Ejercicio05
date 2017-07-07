@@ -30,7 +30,7 @@ void loop() {
 boolean detectarFlanco(boolean estado) { // funcion para detectar el cambio de estado del pin
   if (estado == HIGH && flanco == 0) {
     flanco = 1;
-    pulsaciones = pulsaciones += 10;
+    pulsaciones += 10;
     return true;
   }
   if (estado == LOW) { // si pin deja de estar high ponemos el flanco a 0
