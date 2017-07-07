@@ -8,7 +8,7 @@ Servo miservo;
 int grados = 10;  //Variable global
 
 void setup() {
-  serial.begin(9600) //
+  Serial.begin(9600);
   pinMode(PIN_BOTON_A, INPUT_PULLUP);
   miservo.attach(PIN_SERVO);
   miservo.write(grados);
