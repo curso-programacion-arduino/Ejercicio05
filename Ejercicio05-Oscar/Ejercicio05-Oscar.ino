@@ -37,7 +37,7 @@ void loop() {
       if (grados >= 170)
         grados = 10;
       else
-        grados = 10;
+        grados = 90;
       miservo.write(grados);
     }
     anterior_b = estado_b;  //
